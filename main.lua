@@ -8,9 +8,9 @@ require("src.states.title")
 require("src.states.starting")
 
 function love.load()
+    state.registerEvents()
     cam = camera()
     world = wf.newWorld(0, 0, false)
-    state.registerEvents()
     state.switch(title)
 end
 
