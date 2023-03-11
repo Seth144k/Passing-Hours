@@ -1,10 +1,8 @@
-local x, y = 0, 0
-
-player = world:newRectangleCollider(x, y, 40, 40)
+player = {}
 
 function player:load(X, Y)
-    self:setPosition(X, Y)
-    self:setFixedRotation(true)
+    self.collider = world:newRectangleCollider(X, Y, 40, 40)
+    self.collider:setFixedRotation(true)
     self.speed = 200
 end
 
@@ -39,7 +37,5 @@ function player:update(dt)
         vy = self.speed * 1
     end
 
-    cam:follow(self:getX(), self:getY())
-
-    self:setLinearVelocity(vx, vy)
+    self.collider:setLinearVelocity(vx, vy)
 end
