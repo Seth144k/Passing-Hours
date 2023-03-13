@@ -14,16 +14,24 @@ function love.load()
     state.switch(title)
 end
 
+local debug = false
+
 function love.keypressed(key)
     suit.keypressed(key)
     if key == "escape" then
         love.event.quit()
     end
+    if key == "f3" and not debug then
+        debug = true
+    elseif key == "f3" and debug then
+        debug = false
+    end
+    player:keypressed(key)
 end
 
 function love.draw()
     suit.draw()
-    --love.graphics.print(tostring(love.mouse.getPosition()))
+    cam:draw()
 end
 
 function love.update(dt)

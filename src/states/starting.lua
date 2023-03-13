@@ -5,7 +5,6 @@ starting = {}
 
 function starting:enter()
     love.window.setTitle("Reality")
-    cam = camera()
     loadMap("untitled")
     player:load(40, 40)
 end
@@ -17,6 +16,6 @@ function starting:draw()
 end
 
 function starting:update(dt)
-    cam:follow(player.collider:getX(), player.collider:getY())
     player:update(dt)
+    cam:follow(player.collider:getX(), player.collider:getY())
 end
