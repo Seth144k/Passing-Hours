@@ -4,15 +4,9 @@ function player:load(X, Y)
     self.collider = world:newRectangleCollider(X, Y, 40, 40)
     self.collider:setFixedRotation(true)
     self.speed = 200
-    self.sanity = "high"
+    self.sanity = self.sanity or "high"
     self.music = {}
     self.music.mediumSanity = love.audio.newSource("src/res/music/Im_fine.wav", "stream")
-end
-
-function player:keypressed(key)
-    if key == "up" then
-        self.sanity = "medium"
-    end
 end
 
 function player:update(dt)

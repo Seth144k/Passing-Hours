@@ -17,6 +17,13 @@ end
 local debug = false
 
 function love.keypressed(key)
+    if debug and key == "up" then
+        player.sanity = "high"
+    elseif debug and key == "down" then
+        player.sanity = "low"
+    elseif debug and key == "right" then
+        player.sanity = "medium"
+    end
     suit.keypressed(key)
     if key == "escape" then
         love.event.quit()
@@ -26,12 +33,14 @@ function love.keypressed(key)
     elseif key == "f3" and debug then
         debug = false
     end
-    player:keypressed(key)
 end
 
 function love.draw()
     suit.draw()
     cam:draw()
+    if debug then
+        love.graphics.print("Sanity: "..tostring(player.sanity))
+    end
 end
 
 function love.update(dt)
