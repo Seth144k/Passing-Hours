@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global, undefined-field, param-type-mismatch
 --[[
 The MIT License (MIT)
 

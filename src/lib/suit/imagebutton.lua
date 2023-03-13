@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- This file is part of SUIT, copyright (c) 2016 Matthias Richter
 
 local BASE = (...):match('(.-)[^%.]+$')
