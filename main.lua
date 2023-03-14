@@ -11,6 +11,7 @@ function love.load()
     state.registerEvents()
     cam = camera()
     world = wf.newWorld(0, 0, false)
+    
     state.switch(title)
 end
 

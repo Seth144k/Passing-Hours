@@ -18,6 +18,7 @@ function player:update(dt)
             self.music.mediumSanity:stop()
         end
     end
+    
     local vx = 0
     local vy = 0
 
