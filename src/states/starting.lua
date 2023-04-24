@@ -4,14 +4,15 @@ camera = require("src.lib.Camera")
 starting = {}
 
 function starting:enter()
+    love.mouse.setVisible(false)
     love.window.setTitle("Reality")
-    loadMap("untitled")
     player:load(40, 40)
+    loadMap("untitled")
 end
 
 function starting:draw()
     cam:attach()
-        world:draw()
+    world:draw()
     cam:detach()
 end
 

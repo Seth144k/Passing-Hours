@@ -11,7 +11,7 @@ function love.load()
     state.registerEvents()
     cam = camera()
     world = wf.newWorld(0, 0, false)
-    
+
     state.switch(title)
 end
 
@@ -39,9 +39,6 @@ end
 function love.draw()
     suit.draw()
     cam:draw()
-    if debug then
-        love.graphics.print("Sanity: "..tostring(player.sanity))
-    end
 end
 
 function love.update(dt)
